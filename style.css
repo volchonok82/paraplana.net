@@ -67,7 +67,7 @@ a:hover {
 body {
   display: grid;
   grid-template-rows: max-content 1fr max-content;
-  height: 100vh;
+  height: 100dvh;
   color: var(--clr-accent-300);
   background-image: url(./img/sun_sky_bg.webp);
   background-repeat: no-repeat;
@@ -75,21 +75,29 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
-._no-webp body {
-  background-image: url(./img/sun_sky_bg.jpg);
-}
-header {
-  position: sticky;
-  top: 0;
-}
+
 main {
   overflow: auto;
 }
-
+header,
 footer {
   position: sticky;
-  bottom: 0;
+  background-image: url(./img/sun_sky_bg.webp);
 }
+header {
+  top: 0;
+  background-position: top;
+}
+footer {
+  bottom: 0;
+  background-position: bottom;
+}
+._no-webp body,
+._no-webp header,
+._no-webp footer {
+  background-image: url(./img/sun_sky_bg.jpg);
+}
+
 .content-grid {
   --padding-inline: 1rem;
   --content-max-width: 900px;
